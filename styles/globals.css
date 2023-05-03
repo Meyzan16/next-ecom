@@ -31,8 +31,10 @@ label{
 }
 
 .btn-primary{
-    @apply bg-teal-500 text-white py-1 px-6 rounded-xl text-base mt-4;
+    @apply bg-teal-500 text-white py-1 px-6 rounded-xl text-sm mt-4;
 }
+
+
 
 
 

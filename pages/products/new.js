@@ -1,18 +1,26 @@
 import Layout from "@/components/Layout";
 import axios from "axios";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function NewProduct(){
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
+    const [goToProduct, setGoToProduct] = useState('');
+    const router = useRouter();
 
     const createProduct = async (ev) => {
         console.log('asas')
         ev.preventDefault(); 
         const data = {title,description,price};
         await axios.post('/api/products', data);
+        setGoToProduct(true)
+    }
 
+    if(goToProduct){
+        router.push('/products');
     }
 
     return (
@@ -44,6 +52,9 @@ export default function NewProduct(){
                             onChange={ev => setPrice(ev.target.value) }
                              />
                         </div>
+
+
+                        <Link href={'/products'} className="bg-red-700 py-2 px-4 text-sm text-white rounded-xl mr-2">Back</Link>
 
                         <button type="submit" className="btn-primary">Save</button>
                 </form>
