@@ -4,11 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Urbanist:wght@800&display=swap');
 
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-}
+
 
 html{
     scroll-behavior: smooth;
@@ -17,5 +13,26 @@ html{
 body {
     font-family: 'Urbanist', sans-serif;
 }
+
+input[type="text"],input[type="password"], input[type="email"], input[type="number"],
+input[type="tel"],
+textarea {
+    @apply border-2 border-teal-500 rounded-md px-2 py-1 w-full text-base focus:border-teal-500;
+    @apply mb-2
+}
+
+textarea{
+    height:100px;
+}
+
+
+label{
+    @apply text-teal-500;
+}
+
+.btn-primary{
+    @apply bg-teal-500 text-white py-1 px-6 rounded-xl text-base mt-4;
+}
+
 
 

@@ -8,7 +8,7 @@ export default function Home() {
     <Layout>
         <div className="text-teal-500 flex justify-between">
           <h2>
-            Hello, {session?.user?.email}
+            Hello, <b>{session?.user?.email}</b> 
           </h2>
 
           <div className="md:flex bg-teal-500 rounded-lg items-center hidden overflow-hidden">
