@@ -47,9 +47,15 @@ table.basic tr td {
 }
 
 table.basic a {
-    @apply bg-teal-500 py-1 px-4 rounded-lg text-white  text-sm inline-flex gap-1 items-center;
+    @apply bg-teal-500 py-1 px-4 rounded-lg text-white  text-sm inline-flex gap-1 items-center mr-2;
 }
 
+.btn-red{
+    @apply bg-red-700 py-2 px-4 text-sm text-white rounded-xl 
+}
+.btn-default{
+    @apply bg-teal-500 py-2 px-4 text-sm text-white rounded-xl 
+}
 
 
 

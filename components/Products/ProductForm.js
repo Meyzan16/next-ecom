@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function ProductForm({
+    _id,
     title:existingTitle, 
     description:existingDescription, 
     price:existingPrice,
@@ -15,12 +16,17 @@ export default function ProductForm({
     const [goToProduct, setGoToProduct] = useState('');
     const router = useRouter();
 
-    const createProduct = async (ev) => {
-        console.log('asas')
+
+    const saveProduct = async (ev) => {
         ev.preventDefault(); 
         const data = {title,description,price};
-        await axios.post('/api/products', data);
-        setGoToProduct(true)
+        if(_id){
+            //jika ada id maka update
+            await axios.put('/api/product', {...data, _id})
+        }else{
+            await axios.post('/api/products', data);
+            setGoToProduct(true);
+        }
     }
 
     if(goToProduct){
@@ -29,7 +35,7 @@ export default function ProductForm({
 
     return (
             <div className="w-full lg:w-1/2">
-                <form onSubmit={createProduct}>
+                <form onSubmit={saveProduct}>
                         <div>
                             <label className="text-base">Full Name</label>
                             <input  type="text" placeholder="Jane Doe"
@@ -53,9 +59,9 @@ export default function ProductForm({
                         </div>
 
 
-                        <Link href={'/products'} className="bg-red-700 py-2 px-4 text-sm text-white rounded-xl mr-2">Back</Link>
+                        <Link href={'/products'} className="btn-red mr-2">Back</Link>
 
-                        <button type="submit" className="btn-primary">Save</button>
+                        <button type="submit" className="btn-default">Save</button>
                 </form>
  
             </div>
