@@ -34,6 +34,22 @@ label{
     @apply bg-teal-500 text-white py-1 px-6 rounded-xl text-sm mt-4;
 }
 
+table.basic {
+    @apply w-full mt-6;
+}
+
+table.basic thead tr td {
+    @apply bg-teal-500 text-white text-center;
+}
+
+table.basic tr td {
+    @apply border-2 p-2 border-teal-600  text-sm text-slate-600 text-center ;
+}
+
+table.basic a {
+    @apply bg-teal-500 py-1 px-4 rounded-lg text-white  text-sm inline-flex gap-1 items-center;
+}
+
 
 
 
