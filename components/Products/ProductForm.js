@@ -55,7 +55,7 @@ export default function ProductForm({
                                 <div>
                                     Upload 
                                 </div>
-                                <input type="file"  className='hidden' onChange={uploadPhoto}/>
+                                <input type="file"  className='hidden' />
                                     
                             </label>
                             {!image?.length && (
